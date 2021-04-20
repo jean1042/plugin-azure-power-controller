@@ -15,7 +15,7 @@ Please contact us if you need any further information. (<support@spaceone.dev>)
 
 * Table of Contents
     * [Authentication Overview](#authentication-overview)
-        * [Compute Engine](#compute-engine)
+        * [Virtual Machines](#virtual-machines)
             * [Instance](#compute-vminstance)
             * [Instance Group](#instance-group)
         * [CLOUD SQL](#cloud-sql)
@@ -38,31 +38,40 @@ Registered service account on SpaceONE must have certain permissions to proceed 
 Please, set authentication privilege for followings:
 
 
-#### [Compute Engine](https://cloud.google.com/compute/docs/apis)
+#### Virtual Machines
 
-- ##### Compute VM(Instance)
+- ##### [Virtual Machines](https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines)
     - Scopes
-        - https://www.googleapis.com/auth/compute
-        - https://www.googleapis.com/auth
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/list
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/poweroff
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/start
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/get
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/deallocate
         
-    - IAM
-        - compute.instances.get 
-        - compute.instances.start
-        - compute.instances.stop
-        - compute.instances.reset
+    - Actions
+        - Microsoft.Compute/virtualMachines/read	
+        - Microsoft.Compute/virtualMachines/write	
+        - Microsoft.Compute/virtualMachines/start/action	
+        - Microsoft.Compute/virtualMachines/powerOff/action	
+        - Microsoft.Compute/virtualMachines/restart/action
+        - Microsoft.Compute/virtualMachines/deallocate/action	
+        - Microsoft.Compute/virtualMachines/instanceView/read
+        - Microsoft.Compute/virtualMachines/extensions/read		
         
-- ##### Instance Group
+- ##### [Virtual Machine Scale Sets](https://docs.microsoft.com/en-us/rest/api/compute/virtualmachinescalesets)
     - Scopes
-        - https://www.googleapis.com/auth/compute
-        - https://www.googleapis.com/auth/cloud-platform
-     
-#### [Cloud SQL](https://cloud.google.com/sql/docs/mysql/apis)
-
-- #### Instance
-    - Scopes 
-        - https://www.googleapis.com/auth/cloud-platform
-        - https://www.googleapis.com/auth/sqlservice.admin
-
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachinescalesets/list
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachinescalesets/deallocate
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachinescalesets/poweroff
+        - https://docs.microsoft.com/en-us/rest/api/compute/virtualmachinescalesets/start
+      
+    - Actions
+        - Microsoft.Compute/virtualMachineScaleSets/read	
+        - Microsoft.Compute/virtualMachineScaleSets/start/action	
+        - Microsoft.Compute/virtualMachineScaleSets/powerOff/action
+        - Microsoft.Compute/virtualMachineScaleSets/restart/action	
+        - Microsoft.Compute/virtualMachineScaleSets/deallocate/action
+        - Microsoft.Compute/virtualMachineScaleSets/virtualMachines/read		
 
 ### Running Sate Overview     
 
